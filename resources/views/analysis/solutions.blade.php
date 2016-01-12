@@ -1,7 +1,8 @@
 
-    <h2>Electroless Nickel</h2>
-    <div class="table">
-        <table class="table table-bordered table-striped table-hover">
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Electroless Nickel</strong></caption>
             <thead>
                 <tr>
                     <th>Tank</th><th>Bath</th><th>Nickel</th><th>pH</th><th>Last Checked</th>
@@ -76,39 +77,97 @@
             </tbody>   
         </table>
     </div>
-<h2>Anodize</h2>
-    <div class="table">
-        <table class="table table-bordered table-striped table-hover">
+</div>
+
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Cleaners</strong></caption>
             <thead>
                 <tr>
-                    <th>Tank</th><th>Bath</th><th>Free Acid</th><th>Total Aluminum</th><th>Last Checked</th>
+                    <th>Tank</th><th>Bath</th><th>Concentration</th><th>Last Checked</th>
                 </tr>
             </thead>
             <tbody>
 
                 <tr>
-                    <td>{{$AN1->RecordName}}</td>
-                    <td>{{$AN1->FormName}}</td>
+                    <td>{{$ANClean1->RecordName}}</td>
+                    <td>{{$ANClean1->FormName }}</td>
 
-                    {!! $AN1->Value5 < $l_hard_anodize_free_acid || $AN1->Value5 > $h_hard_anodize_free_acid ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN1->Value5 . ' oz/gal'}}</td>
-                    {!! $AN1->Value6 < $l_hard_anodize_total_aluminum || $AN1->Value6 > $h_hard_anodize_total_aluminum ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN1->Value6 . ' oz/gal'}}</td>                    
-                    <td>{{$AN1->Date->diffForHumans()}}</td>
+                    {!! $ANClean1->Value3 < $l_oakite164 || $ANClean1->Value3 > $h_oakite164 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$ANClean1->Value3 . ' oz/gal'}}</td>
+                    <td>{{$ANClean1->Date->diffForHumans()}}</td>
                 </tr>
                 <tr>
-                    <td>{{$AN2->RecordName}}</td>
-                    <td>{{$AN2->FormName}}</td>
+                    <td>{{$ANClean2->RecordName}}</td>
+                    <td>{{$ANClean2->FormName}}</td>
 
-                    {!! $AN2->Value5 < $l_anodize_free_acid || $AN2->Value5 > $h_anodize_free_acid ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN2->Value5 . ' oz/gal'}}</td>
-                    {!! $AN2->Value6 < $l_anodize_total_aluminum || $AN2->Value6 > $h_anodize_total_aluminum ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN2->Value6 . ' oz/gal'}}</td>                    
-                    <td>{{$AN2->Date->diffForHumans()}}</td>
-                </tr>                                                                         
+                    {!! $ANClean2->Value3 < $l_oakite164 || $ANClean2->Value3 > $h_oakite164 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$ANClean2->Value3 . ' oz/gal'}}</td>
+                    <td>{{$ANClean2->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$NiAlClean->RecordName}}</td>
+                    <td>{{$NiAlClean->FormName}}</td>
+
+                    {!! $NiAlClean->Value3 < $l_oakite164 || $NiAlClean->Value3 > $h_oakite164 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$NiAlClean->Value3 . ' oz/gal'}}</td>
+                    <td>{{$NiAlClean->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$CrClean1->RecordName}}</td>
+                    <td>{{$CrClean1->FormName}}</td>
+
+                    {!! $CrClean1->Value3 < $l_heatbath1448 || $CrClean1->Value3 > $h_heatbath1448 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$CrClean1->Value3 . ' oz/gal'}}</td>
+                    <td>{{$CrClean1->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$NiClean1->RecordName}}</td>
+                    <td>{{$NiClean1->FormName}}</td>
+
+                    {!! $NiClean1->Value3 < $l_heatbath1448 || $NiClean1->Value3 > $h_heatbath1448 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$NiClean1->Value3 . ' oz/gal'}}</td>
+                    <td>{{$NiClean1->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$NiClean2->RecordName}}</td>
+                    <td>{{$NiClean2->FormName}}</td>
+
+                    {!! $NiClean2->Value3 < $l_heatbath1448 || $NiClean2->Value3 > $h_heatbath1448 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$NiClean2->Value3 . ' oz/gal'}}</td>
+                    <td>{{$NiClean2->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$ZincClean1->RecordName}}</td>
+                    <td>{{$ZincClean1->FormName}}</td>
+
+                    {!! $ZincClean1->Value3 < $l_heatbath1448 || $ZincClean1->Value3 > $h_heatbath1448 ? '<td class="outRange">' : '<td class="inRange">'!!} {{$ZincClean1->Value3 . ' oz/gal'}}</td>
+                    <td>{{$ZincClean1->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$BLClean1->RecordName}}</td>
+                    <td>{{$BLClean1->FormName}}</td>
+
+                    {!! $BLClean1->Value3 < $l_nuvat || $BLClean1->Value3 > $h_nuvat ? '<td class="outRange">' : '<td class="inRange">'!!} {{$BLClean1->Value3 . ' oz/gal'}}</td>
+                    <td>{{$BLClean1->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$BLClean2->RecordName}}</td>
+                    <td>{{$BLClean2->FormName}}</td>
+
+                    {!! $BLClean2->Value3 < $l_nuvat || $BLClean2->Value3 > $h_nuvat ? '<td class="outRange">' : '<td class="inRange">'!!} {{$BLClean2->Value3 . ' oz/gal'}}</td>
+                    <td>{{$BLClean2->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$EOsoakcleaner->RecordName}}</td>
+                    <td>{{$EOsoakcleaner->FormName}}</td>
+
+                    {!! $EOsoakcleaner->Value3 < $l_nuvat || $EOsoakcleaner->Value3 > $h_nuvat ? '<td class="outRange">' : '<td class="inRange">'!!} {{$EOsoakcleaner->Value3 . ' oz/gal'}}</td>
+                    <td>{{$EOsoakcleaner->Date->diffForHumans()}}</td>
+                </tr>                
             </tbody>   
         </table>
     </div>
-
-<h2>Zinc</h2>
-    <div class="table">
-        <table class="table table-bordered table-striped table-hover">
+</div>
+<div class="col-xs-6">
+    <div class="table-responsive ">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Zinc</strong></caption>
             <thead>
                 <tr>
                     <th>Tank</th><th>Bath</th><th>Zinc</th><th>Caustic</th><th>Last Checked</th>
@@ -156,10 +215,44 @@
             </tbody>   
         </table>
     </div>
+</div>
+<div class="col-xs-6" style="height: 251px">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Anodize</strong></caption>
+            <thead>
+                <tr>
+                    <th>Tank</th><th>Bath</th><th>Free Acid</th><th>Total Aluminum</th><th>Last Checked</th>
+                </tr>
+            </thead>
+            <tbody>
 
-<h2>Zinc-Nickel</h2>
-    <div class="table">
-        <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <td>{{$AN1->RecordName}}</td>
+                    <td>{{$AN1->FormName}}</td>
+
+                    {!! $AN1->Value5 < $l_hard_anodize_free_acid || $AN1->Value5 > $h_hard_anodize_free_acid ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN1->Value5 . ' oz/gal'}}</td>
+                    {!! $AN1->Value6 < $l_hard_anodize_total_aluminum || $AN1->Value6 > $h_hard_anodize_total_aluminum ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN1->Value6 . ' oz/gal'}}</td>                    
+                    <td>{{$AN1->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$AN2->RecordName}}</td>
+                    <td>{{$AN2->FormName}}</td>
+
+                    {!! $AN2->Value5 < $l_anodize_free_acid || $AN2->Value5 > $h_anodize_free_acid ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN2->Value5 . ' oz/gal'}}</td>
+                    {!! $AN2->Value6 < $l_anodize_total_aluminum || $AN2->Value6 > $h_anodize_total_aluminum ? '<td class="outRange">' : '<td class="inRange">'!!} {{$AN2->Value6 . ' oz/gal'}}</td>                    
+                    <td>{{$AN2->Date->diffForHumans()}}</td>
+                </tr>                                                                         
+            </tbody>   
+        </table>
+    </div>
+</div>
+
+
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Zinc-Nickel</strong></caption>        
             <thead>
                 <tr>
                     <th>Tank</th><th>Bath</th><th>pH</th><th>Zinc Metal</th><th>Nickel Metal</th><th>Total Chloride</th><th>Last Checked</th>
@@ -179,10 +272,12 @@
             </tbody>   
         </table>
     </div>
+</div>
 
-<h2>Hard Chrome</h2>
-    <div class="table">
-        <table class="table table-bordered table-striped table-hover">
+<div class="col-xs-6" style="height: 165px">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Hard Chrome</strong></caption>        
             <thead>
                 <tr>
                     <th>Tank</th><th>Bath</th><th>Chrome Metal</th><th>Last Checked</th>
@@ -204,4 +299,50 @@
                 </tr>
             </tbody>   
         </table>
-    </div>    
+    </div>
+</div>
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Tin Bright</strong></caption>        
+            <thead>
+                <tr>
+                    <th>Tank</th><th>Bath</th><th>Sulfuric Acid</th><th>Tin Metal</th><th>Stannous Sulfate</th><th>Last Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{$TinBright->RecordName}}</td>
+                    <td>{{$TinBright->FormName}}</td>
+                    {!! $TinBright->Value3 < $l_tin_bright_sulfuric_acid || $TinBright->Value3 > $h_tin_bright_sulfuric_acid ? '<td class="outRange">' : '<td class="inRange">'!!} {{$TinBright->Value3 . 'oz/gal'}}</td>
+                    {!! $TinBright->Value5 < $l_tin_bright_metal || $TinBright->Value5 > $h_tin_bright_metal ? '<td class="outRange">' : '<td class="inRange">'!!} {{$TinBright->Value5 . 'oz/gal'}}</td>
+                    {!! $TinBright->Value6 < $l_tin_bright_stannous_sulfate || $TinBright->Value6 > $h_tin_bright_stannous_sulfate ? '<td class="outRange">' : '<td class="inRange">'!!} {{$TinBright->Value6 . 'oz/gal'}}</td>
+                    <td>{{$TinBright->Date->diffForHumans()}}</td>
+                </tr>
+            </tbody>   
+        </table>
+    </div>
+</div>
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Tin Dull</strong></caption>        
+            <thead>
+                <tr>
+                    <th>Tank</th><th>Bath</th><th>Free Caustic</th><th>Sodium Stannate</th><th>Last Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{$TinDull->RecordName}}</td>
+                    <td>{{$TinDull->FormName}}</td>
+                    {!! $TinDull->Value6 < $l_tin_dull_free_caustic || $TinDull->Value6 > $h_tin_dull_free_caustic ? '<td class="outRange">' : '<td class="inRange">'!!} {{$TinDull->Value6 . 'oz/gal'}}</td>
+                    {!! $TinDull->Value5 < $l_tin_dull_sodium_stannate || $TinDull->Value5 > $h_tin_dull_sodium_stannate ? '<td class="outRange">' : '<td class="inRange">'!!} {{$TinDull->Value5 . 'oz/gal'}}</td>
+                    <td>{{$TinBright->Date->diffForHumans()}}</td>
+                </tr>
+            </tbody>   
+        </table>
+    </div>
+</div>

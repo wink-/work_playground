@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use App\Post;
-use Illuminate\Http\Request;
-use Carbon\Carbon;
 use Session;
+use App\Post;
+use Carbon\Carbon;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
@@ -20,6 +19,7 @@ class PostsController extends Controller
      */
     public function index()
     {
+
         $posts = Post::paginate(15);
 
         return view('posts.index', compact('posts'));

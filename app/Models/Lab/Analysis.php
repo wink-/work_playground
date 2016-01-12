@@ -8,25 +8,29 @@ class Analysis extends Model
 {
 
    /**
-     * The primary key used by the model.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'ID';
-
-   /**
      * The database connection used by the model.
      *
      * @var string
      */
-    protected $connection = 'pacsys';
+    protected $connection = "eagle";
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'analysis';
+    protected $table = 'Analysis';    
+
+   /**
+     * The primary key used by the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'ID';
+
+
+
+
 
     /**
      * Attributes that should be mass-assignable.

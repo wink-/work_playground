@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Lab;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-use App\Models\Lab\Analysis;
-use Illuminate\Http\Request;
+
+
 use Carbon\Carbon;
-use Session;
-use DB;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Models\Lab\Analysis;
+use App\Http\Controllers\Controller;
 
 class AnalysisController extends Controller
 {
@@ -117,7 +117,7 @@ class AnalysisController extends Controller
         ->orderBy('Date', 'desc')->first();
 
         // Hard Chrome CR1 is the larger tank. CR2 is the smaller tank
-        // Value1 is pH, Value7 is Zinc Metal, Value 8 is Nickel Metal, Value10 is total chloride
+        // Value3 is chrome metal
         $CR1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
         ->where('RecordName', '=', 'Big Chrome')
         ->where('Value3','>', 0)
@@ -128,6 +128,76 @@ class AnalysisController extends Controller
         ->where('Value3','>', 0)
         ->orderBy('Date', 'desc')->first();
 
+        // Cleaners An Clean1, An Clean 2, BL Clean 1, BL Clean 2, Cr Clean 1, EO soak cleaner,
+        // Ni Al Clean, Ni Clean 1, Ni Clean 2, Zinc Clean 1
+        // Value3 is concentration
+        $ANClean1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'An Clean1')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+        
+        $ANClean2 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'An Clean 2')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $BLClean1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'BL Clean 1')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $BLClean2 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'BL Clean 2')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+     
+        $CrClean1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'Cr Clean 1')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $EOsoakcleaner = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'EO soak cleaner')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $NiAlClean = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'Ni Al Clean')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $NiClean1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'Ni Clean 1')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $NiClean2 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'Ni Clean 2')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();        
+
+        $ZincClean1 = Analysis::select('RecordName','FormName', 'Value3', 'Date')
+        ->where('RecordName', '=', 'Zinc Clean 1')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        // Tin bright and tin bull
+        $TinBright = Analysis::select('RecordName','FormName', 'Value3', 'Value5', 'Value6', 'Date')
+        ->where('RecordName', '=', 'Bright Tin')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $TinDull = Analysis::select('RecordName','FormName', 'Value3', 'Value5', 'Value6', 'Date')
+        ->where('RecordName', '=', 'Dull Tin')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        //Cad Tanks Big Cad Tk, SmCadTk
+        $BigCad = Analysis::select('RecordName','FormName', 'Value2', 'Value4', 'Value6', 'Date')
+        ->where('RecordName', '=', 'Dull Tin')
+        ->where('Value3','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
         // l_ denotes low limit, h_ denotes high limit
         $limits = array(
             "l_en_metal" => 0.5, "h_en_metal" => 0.85, "l_en_pH" => 4.2, "h_en_pH" => 5.4,
@@ -135,15 +205,21 @@ class AnalysisController extends Controller
             "l_hard_anodize_free_acid" => 12.5, "h_hard_anodize_free_acid" => 14.0, "l_hard_anodize_total_aluminum" => 1.0, "h_hard_anodize_total_aluminum" => 2.5,
             "l_anodize_free_acid" => 12.0, "h_anodize_free_acid" => 16.0, "l_anodize_total_aluminum" => 1.0, "h_anodize_total_aluminum" => 2.5,            
             "l_chrome_metal" => 30.0, "h_chrome_metal" => 45.0,
-            "l_tin_bright_metal" => 1.0, "h_tin_bright_metal" => 4.0, "l_tin_bright_sulfuric_acid" => 8.0, "h_tin_bright_sulfuric_acid" => 12,            
-            "l_tin_dull_sodium_stannate" => 6.0, "h_tin_dull_sodium_stannate" => 22.0, "l_tin_dull_free_caustic" => 1.0, "h_tin_dull_free_caustic" => 2.0,            
+            "l_tin_bright_metal" => 1.0, "h_tin_bright_metal" => 4.0, "l_tin_bright_sulfuric_acid" => 8.0, "h_tin_bright_sulfuric_acid" => 12,
+                "l_tin_bright_stannous_sulfate" => 3, "h_tin_bright_stannous_sulfate" => 6,
+            "l_tin_dull_sodium_stannate" => 6.0, "h_tin_dull_sodium_stannate" => 22.0, "l_tin_dull_free_caustic" => 1.0, "h_tin_dull_free_caustic" => 2.0,         
             "l_zinc_nickel_zinc_metal" => 3.5, "h_zinc_nickel_zinc_metal" => 4.5, "l_zinc_nickel_nickel_metal" => 2.8, "h_zinc_nickel_nickel_metal" => 3.3,
-                "l_zinc_nickel_total_chloride" => 27.0, "h_zinc_nickel_total_chloride" => 33.0, "l_zinc_nickel_pH" =>5.3, "h_zinc_nickel_pH" => 6.0
+                "l_zinc_nickel_total_chloride" => 27.0, "h_zinc_nickel_total_chloride" => 33.0, "l_zinc_nickel_pH" =>5.3, "h_zinc_nickel_pH" => 6.0,
+            "l_heatbath1448" => 8.0, "h_heatbath1448" => 18, "l_oakite164" => 6.0, "h_oakite164" => 16.0, "l_nuvat" => 4.0, "h_nuvat" => 10.0
+
 
             );
-
+        // Cleaners An Clean1, An Clean 2, BL Clean 1, BL Clean 2, Cr Clean 1, EO soak cleaner,
+        // Ni Al Clean, Ni Clean 1, Ni Clean 2, Zinc Clean 1
         return view('analysis.index', $limits, 
-                compact('EN1', 'EN2', 'EN3', 'EN4', 'EN5', 'EN6', 'EN7', 'EN8', 'EN9', 'ZN1', 'ZN2', 'ZN3', 'ZN5', 'ZN6', 'AN1', 'AN2', 'ZNNI1', 'CR1', 'CR2'));
+                compact('EN1', 'EN2', 'EN3', 'EN4', 'EN5', 'EN6', 'EN7', 'EN8', 'EN9', 'ZN1', 'ZN2', 'ZN3', 'ZN5', 'ZN6', 'AN1', 'AN2', 'ZNNI1', 'CR1', 'CR2',
+                    'ANClean1', 'ANClean2', 'BLClean1', 'BLClean2', 'CrClean1', 'EOsoakcleaner', 'NiAlClean', 'NiClean1', 'NiClean2', 'ZincClean1', 'TinBright',
+                    'TinDull'));
 
     }
 

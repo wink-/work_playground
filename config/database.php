@@ -74,6 +74,17 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
+        'eagle' => [
+            'driver'    => 'mysql',
+            'host'      => 'eagle',
+            'database'  => 'PacSys',
+            'username'  => 'wipsys',
+            'password'  => 'wipsys',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],        
 
         'pgsql' => [
             'driver'   => 'pgsql',

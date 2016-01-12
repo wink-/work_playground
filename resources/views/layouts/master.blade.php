@@ -4,13 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel CRUD App</title>
+	<title>Eaglets</title>
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/flatly/bootstrap.min.css" rel="stylesheet">
 
 	<style>
 		body {
 			padding-top: 70px;
+
+
 		}
 		.inRange {
 			font-weight: 900;
@@ -20,13 +22,18 @@
 		.outRange{
 			font-weight: 900;
 			color: white;
-			background-color: red;			
-		}			
+			background-color: red;
+		}
+		caption{
+			color: black;
+		}
+
+
 	</style>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
-	    <div class="container">
+	    <div class="container-fluid">
 	        <!-- Brand and toggle get grouped for better mobile display -->
 	        <div class="navbar-header">
 	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -35,9 +42,10 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Test Lab</a>
+	            <a class="navbar-brand" href="#">DashBoard</a>
+	            <a class="navbar-brand" href="http://test.gon/analysis">Tank Status</a>
 	        </div>
-
+{{--
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
@@ -49,11 +57,11 @@
 					@endif
 				</ul>
 			</div>
-
+--}}
 	    </div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container">
+	<div class="container-fluid">
 		@yield('content')
 	</div>
 
