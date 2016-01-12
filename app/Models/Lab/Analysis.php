@@ -12,7 +12,7 @@ class Analysis extends Model
      *
      * @var string
      */
-    protected $connection = "eagle";
+    protected $connection = "pacsys";
 
     /**
      * The database table used by the model.
