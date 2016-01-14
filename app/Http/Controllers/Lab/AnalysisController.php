@@ -202,8 +202,8 @@ class AnalysisController extends Controller
         $limits = array(
             "l_en_metal" => 0.5, "h_en_metal" => 0.85, "l_en_pH" => 4.2, "h_en_pH" => 5.4,
             "l_zinc_metal" => 0.5, "h_zinc_metal" => 2.0, "l_zinc_caustic" => 8.0, "h_zinc_caustic" => 20.0,            
-            "l_hard_anodize_free_acid" => 12.5, "h_hard_anodize_free_acid" => 14.0, "l_hard_anodize_total_aluminum" => 1.0, "h_hard_anodize_total_aluminum" => 2.5,
-            "l_anodize_free_acid" => 12.0, "h_anodize_free_acid" => 16.0, "l_anodize_total_aluminum" => 1.0, "h_anodize_total_aluminum" => 2.5,            
+            "l_hard_anodize_free_acid" => 12.5, "h_hard_anodize_free_acid" => 15.0, "l_hard_anodize_total_aluminum" => 1.0, "h_hard_anodize_total_aluminum" => 2.5,
+            "l_anodize_free_acid" => 12.5, "h_anodize_free_acid" => 15.0, "l_anodize_total_aluminum" => 1.0, "h_anodize_total_aluminum" => 2.5,            
             "l_chrome_metal" => 30.0, "h_chrome_metal" => 45.0,
             "l_tin_bright_metal" => 1.0, "h_tin_bright_metal" => 4.0, "l_tin_bright_sulfuric_acid" => 8.0, "h_tin_bright_sulfuric_acid" => 12,
                 "l_tin_bright_stannous_sulfate" => 3, "h_tin_bright_stannous_sulfate" => 6,
