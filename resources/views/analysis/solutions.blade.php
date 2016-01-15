@@ -285,7 +285,7 @@
 <div class="col-xs-6">
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover table-condensed">
-            <caption><strong>Zinc-Nickel</strong></caption>        
+            <caption><strong>Zinc-Nickel</strong></caption>
             <thead>
                 <tr>
                     <th>Tank</th><th>Bath</th><th>pH</th><th>Zinc Metal</th><th>Nickel Metal</th><th>Total Chloride</th><th>Last Checked</th>
@@ -305,8 +305,8 @@
                     {!! $ZNNI1->Value10 < $l_zinc_nickel_total_chloride || $ZNNI1->Value10 > $h_zinc_nickel_total_chloride ? '<td class="outRange">' : '<td class="inRange">'!!}
                     <span data-toggle='tooltip' title="{{$l_zinc_nickel_total_chloride . ' to ' . $h_zinc_nickel_total_chloride}}">{{$ZNNI1->Value10 . ' oz/gal'}}</span></td>
                     <td>{{$ZNNI1->Date->diffForHumans()}}</td>
-                </tr>                                                                
-            </tbody>   
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
@@ -386,6 +386,70 @@
                     <span data-toggle="tooltip" title="{{$l_tin_dull_sodium_stannate . ' to ' . $h_tin_dull_sodium_stannate}}">{{$TinDull->Value5 . 'oz/gal'}}</span></td>
                     <td>{{$TinBright->Date->diffForHumans()}}</td>
                 </tr>
+            </tbody>   
+        </table>
+    </div>
+</div>
+<div class="col-xs-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Cadmium</strong></caption>
+            <thead>
+                <tr>
+                    <th>Tank</th><th>Bath</th><th>pH</th><th>Total Cyanide</th><th>Cadmium Metal</th><th>Sodium Hydroxide</th><th>Last Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{$BigCad->RecordName}}</td>
+                    <td>{{$BigCad->FormName}}</td>
+                    {!! $BigCad->Value2 < $l_cad_pH || $BigCad->Value2 > $h_cad_pH ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_cad_pH . ' to ' . $h_cad_pH}}">{{$BigCad->Value2}}</span></td>
+                    {!! $BigCad->Value4 < $l_cad_total_sodium_cyanide || $BigCad->Value4 > $h_cad_total_sodium_cyanide ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_cad_total_sodium_cyanide . ' to ' . $h_cad_total_sodium_cyanide}}">{{$BigCad->Value4 . ' oz/gal'}}</span></td>
+                    {!! $BigCad->Value6 < $l_cad_metal || $BigCad->Value6 > $h_cad_metal ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_cad_metal . ' to ' . $h_cad_metal}}">{{$BigCad->Value6 . ' oz/gal'}}</span></td>
+                    {!! $BigCad->Value8 < $l_cad_sodium_hydroxide || $BigCad->Value8 > $h_cad_sodium_hydroxide ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_cad_sodium_hydroxide . ' to ' . $h_cad_sodium_hydroxide}}">{{$BigCad->Value8 . ' oz/gal'}}</span></td>
+                    <td>{{$BigCad->Date->diffForHumans()}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-xs-6" style="height: 251px">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <caption><strong>Chem Film</strong></caption>
+            <thead>
+                <tr>
+                    <th>Tank</th><th>Bath</th><th>pH</th><th>Concentration</th><th>Last Checked</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{$ChConYl->RecordName}}</td>
+                    <td>{{$ChConYl->FormName}}</td>
+
+                    {!! $ChConYl->Value1 < $l_chem_yl_pH || $ChConYl->Value1 > $h_chem_yl_pH ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_chem_yl_pH . ' to ' . $h_chem_yl_pH}}">{{$ChConYl->Value1 }}</span></td>
+                    {!! $ChConYl->Value4 < $l_chem_yl_concentration || $ChConYl->Value4 > $h_chem_yl_concentration ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_chem_yl_concentration . ' to ' . $h_chem_yl_concentration}}">{{$ChConYl->Value4 . ' oz/gal'}}</span></td>
+                    <td>{{$ChConYl->Date->diffForHumans()}}</td>
+                </tr>
+                <tr>
+                    <td>{{$ChConTri->RecordName}}</td>
+                    <td>{{$ChConTri->FormName}}</td>
+
+                    {!! $ChConTri->Value1 < $l_chem_tri_pH || $ChConTri->Value1 > $h_chem_tri_pH ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_chem_tri_pH . ' to ' . $h_chem_tri_pH}}">{{$ChConTri->Value1 }}</span></td>
+                    {!! $ChConTri->Value3 < $l_chem_tri_concentration || $ChConTri->Value3 > $h_chem_tri_concentration ? '<td class="outRange">' : '<td class="inRange">'!!}
+                    <span data-toggle='tooltip' title="{{$l_chem_tri_concentration . ' to ' . $h_chem_tri_concentration}}">{{$ChConTri->Value3 . ' %v/v'}}</span></td>
+                    <td>{{$ChConTri->Date->diffForHumans()}}</td>
+                </tr>                                                                         
             </tbody>   
         </table>
     </div>

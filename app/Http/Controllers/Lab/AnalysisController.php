@@ -193,9 +193,20 @@ class AnalysisController extends Controller
         ->orderBy('Date', 'desc')->first();
 
         //Cad Tanks Big Cad Tk, SmCadTk
-        $BigCad = Analysis::select('RecordName','FormName', 'Value2', 'Value4', 'Value6', 'Date')
-        ->where('RecordName', '=', 'Dull Tin')
-        ->where('Value3','>', 0)
+        $BigCad = Analysis::select('RecordName','FormName', 'Value2', 'Value4', 'Value6', 'Value8', 'Date')
+        ->where('RecordName', '=', 'Big Cad Tk')
+        ->where('Value4','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        //Chem Film
+        $ChConYl = Analysis::select('RecordName','FormName', 'Value1', 'Value4', 'Date')
+        ->where('RecordName', '=', 'ChemConv1')
+        ->where('Value1','>', 0)
+        ->orderBy('Date', 'desc')->first();
+
+        $ChConTri = Analysis::select('RecordName','FormName', 'Value1', 'Value3', 'Date')
+        ->where('RecordName', '=', 'ChemConv2')
+        ->where('Value1','>', 0)
         ->orderBy('Date', 'desc')->first();
 
         // l_ denotes low limit, h_ denotes high limit
@@ -210,8 +221,11 @@ class AnalysisController extends Controller
             "l_tin_dull_sodium_stannate" => 6.0, "h_tin_dull_sodium_stannate" => 22.0, "l_tin_dull_free_caustic" => 1.0, "h_tin_dull_free_caustic" => 2.0,         
             "l_zinc_nickel_zinc_metal" => 3.5, "h_zinc_nickel_zinc_metal" => 4.5, "l_zinc_nickel_nickel_metal" => 2.8, "h_zinc_nickel_nickel_metal" => 3.3,
                 "l_zinc_nickel_total_chloride" => 27.0, "h_zinc_nickel_total_chloride" => 33.0, "l_zinc_nickel_pH" =>5.3, "h_zinc_nickel_pH" => 6.0,
-            "l_heatbath1448" => 8.0, "h_heatbath1448" => 18.0, "l_oakite164" => 6.0, "h_oakite164" => 16.0, "l_nuvat" => 4.0, "h_nuvat" => 10.0
-
+            "l_heatbath1448" => 8.0, "h_heatbath1448" => 18.0, "l_oakite164" => 6.0, "h_oakite164" => 16.0, "l_nuvat" => 4.0, "h_nuvat" => 10.0,
+            "l_cad_pH" => 11.0, "h_cad_pH" => 13.0, "l_cad_total_sodium_cyanide" => 13, "h_cad_total_sodium_cyanide" => 20.0, "l_cad_metal" => 2.1,
+                "h_cad_metal" => 4.0, "l_cad_sodium_hydroxide" => 1.5, "h_cad_sodium_hydroxide" => 4.0,
+            "l_chem_yl_pH" => 1.1, "h_chem_yl_pH" => 2.0, "l_chem_yl_concentration" => 0.75, "h_chem_yl_concentration" => 2.25,
+            "l_chem_tri_pH" => 3.6, "h_chem_tri_pH" => 3.95, "l_chem_tri_concentration" => 19.0, "h_chem_tri_concentration" => 28.0,            
 
             );
         // Cleaners An Clean1, An Clean 2, BL Clean 1, BL Clean 2, Cr Clean 1, EO soak cleaner,
@@ -219,7 +233,7 @@ class AnalysisController extends Controller
         return view('analysis.index', $limits, 
                 compact('EN1', 'EN2', 'EN3', 'EN4', 'EN5', 'EN6', 'EN7', 'EN8', 'EN9', 'ZN1', 'ZN2', 'ZN3', 'ZN5', 'ZN6', 'AN1', 'AN2', 'ZNNI1', 'CR1', 'CR2',
                     'ANClean1', 'ANClean2', 'BLClean1', 'BLClean2', 'CrClean1', 'EOsoakcleaner', 'NiAlClean', 'NiClean1', 'NiClean2', 'ZincClean1', 'TinBright',
-                    'TinDull'));
+                    'TinDull', 'BigCad', 'ChConYl', 'ChConTri'));
 
     }
 
