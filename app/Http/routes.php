@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Lab\AnalysisController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +25,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+	Route::resource('posts', 'PostsController');
+	Route::resource('analysis', 'Lab\AnalysisController');	
 });
 
-Route::group(['middleware' => ['web']], function () {
-	Route::resource('posts', 'PostsController');
-});
-Route::group(['middleware' => ['web']], function () {
-	Route::resource('analysis', 'Lab\AnalysisController');
-});
