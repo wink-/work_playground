@@ -205,12 +205,12 @@ class AnalysisController extends Controller
             "l_hard_anodize_free_acid" => 12.5, "h_hard_anodize_free_acid" => 15.0, "l_hard_anodize_total_aluminum" => 1.0, "h_hard_anodize_total_aluminum" => 2.5,
             "l_anodize_free_acid" => 12.5, "h_anodize_free_acid" => 15.0, "l_anodize_total_aluminum" => 1.0, "h_anodize_total_aluminum" => 2.5,            
             "l_chrome_metal" => 30.0, "h_chrome_metal" => 45.0,
-            "l_tin_bright_metal" => 1.0, "h_tin_bright_metal" => 4.0, "l_tin_bright_sulfuric_acid" => 8.0, "h_tin_bright_sulfuric_acid" => 12,
-                "l_tin_bright_stannous_sulfate" => 3, "h_tin_bright_stannous_sulfate" => 6,
+            "l_tin_bright_metal" => 1.0, "h_tin_bright_metal" => 4.0, "l_tin_bright_sulfuric_acid" => 8.0, "h_tin_bright_sulfuric_acid" => 12.0,
+                "l_tin_bright_stannous_sulfate" => 3, "h_tin_bright_stannous_sulfate" => 6.0,
             "l_tin_dull_sodium_stannate" => 6.0, "h_tin_dull_sodium_stannate" => 22.0, "l_tin_dull_free_caustic" => 1.0, "h_tin_dull_free_caustic" => 2.0,         
             "l_zinc_nickel_zinc_metal" => 3.5, "h_zinc_nickel_zinc_metal" => 4.5, "l_zinc_nickel_nickel_metal" => 2.8, "h_zinc_nickel_nickel_metal" => 3.3,
                 "l_zinc_nickel_total_chloride" => 27.0, "h_zinc_nickel_total_chloride" => 33.0, "l_zinc_nickel_pH" =>5.3, "h_zinc_nickel_pH" => 6.0,
-            "l_heatbath1448" => 8.0, "h_heatbath1448" => 18, "l_oakite164" => 6.0, "h_oakite164" => 16.0, "l_nuvat" => 4.0, "h_nuvat" => 10.0
+            "l_heatbath1448" => 8.0, "h_heatbath1448" => 18.0, "l_oakite164" => 6.0, "h_oakite164" => 16.0, "l_nuvat" => 4.0, "h_nuvat" => 10.0
 
 
             );
