@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Pages;
 
 use Carbon\Carbon;
 use App\Http\Requests;
+use App\Models\Amperage;
 use App\Models\Temperature;
 use Illuminate\Http\Request;
 use App\Models\Lab\Analysis;
@@ -14,6 +15,30 @@ use App\Http\Controllers\Controller;
 class PagesController extends Controller
 {
 
+
+    public function amps()
+    {
+        
+
+        $hard_anodize = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '5')->take(1440);
+        $anodize = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '7')->take(1440);
+        $barrel1 = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '17')->take(1440);
+        $barrel2 = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '19')->take(1440);
+
+
+
+        return view('pages.amps')
+            ->with([
+                'hard_anodize_dates' => $hard_anodize->lists('created_at'),
+                'hard_anodize_amps' => $hard_anodize->lists('amp'),
+                'anodize_dates' => $anodize->lists('created_at'),
+                'anodize_amps' => $anodize->lists('amp'),
+                'barrel1_dates' => $barrel1->lists('created_at'),
+                'barrel1_amps' => $barrel1->lists('amp'),
+                'barrel2_dates' => $barrel2->lists('created_at'),
+                'barrel2_amps' => $barrel2->lists('amp'),
+                ]);
+    }
 
     public function ovens()
     {

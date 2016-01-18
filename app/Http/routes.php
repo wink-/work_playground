@@ -29,5 +29,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('solutions', 'Pages\PagesController@solutions');
 	Route::get('analysis', 'Pages\PagesController@solutions');
 	Route::get('ovens', 'Pages\PagesController@ovens');
+	Route::get('amps', 'Pages\PagesController@amps');	
 });
 

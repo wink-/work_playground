@@ -4,7 +4,7 @@
 <div class="col-xs-3" style="height: 200px">
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover table-condensed">
-            <caption><strong>Ovens</strong></caption>
+            <caption><strong>Current Temperatures</strong></caption>
             <thead>
                 <tr>
                     <th>Name</th><th>Temperature</th><th>Reading Time</th>
@@ -56,7 +56,7 @@
 			data: {
 				labels: {!! json_encode($dates_grieve) !!},
 				datasets: [{
-					label: 'Temperature of Grieve',
+					label: 'Temperature of Grieve for the Past 24 Hours',
 					pointBorderWidth: 1,
 					data: {!! json_encode($temperatures_grieve) !!}
 
@@ -92,7 +92,7 @@
 			data: {
 				labels: {!! json_encode($dates_quincy) !!},
 				datasets: [{
-					label: 'Temperature of Quincy',
+					label: 'Temperature of Quincy for the Past 24 Hours',
 					data: {!! json_encode($temperatures_quincy) !!},
 					pointBorderWidth: 0
 				}]
@@ -125,7 +125,7 @@
 			data: {
 				labels: {!! json_encode($dates_lindberg) !!},
 				datasets: [{
-					label: 'Temperature of Lindberg',
+					label: 'Temperature of Lindberg for the Past 24 Hours',
 					data: {!! json_encode($temperatures_lindberg) !!},
 					pointBorderWidth: 0
 				}]
