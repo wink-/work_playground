@@ -31,4 +31,109 @@
         </table>
     </div>
 </div>
+<div class="container-fluid canvas-holder" style="width:900px; height: 400px; background: ;">
+    <canvas id ="grieve"></canvas>
+</div>
+
+<div class="container-fluid canvas-holder" style="width:900px; height: 400px; background: ;">
+    <canvas id ="quincy"></canvas>
+</div>
+
+<div class="container-fluid canvas-holder" style="width:900px; height: 400px; background: ;">
+    <canvas id ="lindberg"></canvas>
+</div>
+@endsection
+
+
+
+@section('before-scripts-end')
+
+	<script>
+	var grieve = document.getElementById("grieve").getContext("2d");
+	var LineChartDemo = new Chart(grieve, {
+		type: 'line',
+			data: {
+				labels: {!! json_encode($dates_grieve) !!},
+				datasets: [{
+					label: 'Temperature of Grieve',
+					data: {!! json_encode($temperatures_grieve) !!},
+					pointBorderWidth: 0
+				}]
+			},
+			options:{
+				scales:{
+					yAxes:[{
+						type: "linear",
+						ticks:{
+							beginAtZero:true,
+							suggestedMax: 600
+						}
+					}],
+					xAxes:[{
+						type: "time"
+
+					}],				
+				}
+			}
+	});		
+	</script>
+
+	<script>
+	var quincy = document.getElementById("quincy").getContext("2d");
+	var LineChartDemo = new Chart(quincy, {
+		type: 'line',
+			data: {
+				labels: {!! json_encode($dates_quincy) !!},
+				datasets: [{
+					label: 'Temperature of Quincy',
+					data: {!! json_encode($temperatures_quincy) !!},
+					pointBorderWidth: 0
+				}]
+			},
+			options:{
+				scales:{
+					yAxes:[{
+						type: "linear",
+						ticks:{
+							beginAtZero:true,
+							suggestedMax: 600
+						}
+					}],
+					xAxes:[{
+						type: "time"
+
+					}],				
+				}
+			}
+	});		
+	</script>
+	<script>
+	var lindberg = document.getElementById("lindberg").getContext("2d");
+	var LineChartDemo = new Chart(lindberg, {
+		type: 'line',
+			data: {
+				labels: {!! json_encode($dates_lindberg) !!},
+				datasets: [{
+					label: 'Temperature of Lindberg',
+					data: {!! json_encode($temperatures_lindberg) !!},
+					pointBorderWidth: 0
+				}]
+			},
+			options:{
+				scales:{
+					yAxes:[{
+						type: "linear",
+						ticks:{
+							beginAtZero:true,
+							suggestedMax: 600
+						}
+					}],
+					xAxes:[{
+						type: "time"
+
+					}],				
+				}
+			}
+	});		
+	</script>
 @endsection

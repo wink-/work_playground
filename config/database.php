@@ -74,6 +74,17 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
+        'process_data' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_LOGGER_HOST', 'localhost'),
+            'database'  => env('DB_LOGGER_DATABASE', 'process_data'),
+            'username'  => env('DB_LOGGER_USERNAME', 'root'),
+            'password'  => env('DB_LOGGER_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],        
         'eagle' => [
             'driver'    => 'mysql',
             'host'      => 'eagle',

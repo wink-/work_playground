@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'Lab\AnalysisController@index');
+Route::get('/', 'Pages\PagesController@solutions');
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,8 @@ Route::get('/', 'Lab\AnalysisController@index');
 
 Route::group(['middleware' => ['web']], function () {
 	Route::resource('posts', 'PostsController');
-	Route::resource('analysis', 'Lab\AnalysisController');	
+	Route::get('solutions', 'Pages\PagesController@solutions');
+	Route::get('analysis', 'Pages\PagesController@solutions');
+	Route::get('ovens', 'Pages\PagesController@ovens');
 });
 

@@ -24,6 +24,10 @@
 			color: white;
 			background-color: red;
 		}
+		.hot{
+			font-weight: 900;
+			color: red;
+		}
 		caption{
 			color: black;
 		}
@@ -43,21 +47,9 @@
 	                <span class="icon-bar"></span>
 	            </button>
 	            <a class="navbar-brand" href="http://pluto">Pluto</a>
-	            <a class="navbar-brand" href="http://test.gon/analysis">Tank Status</a>
+	            <a class="navbar-brand" href="http://test.gon/pages/solutions">Tank Status</a>
 	        </div>
-{{--
-			<div class="collapse navbar-collapse" id="navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li><a href="#">{{ Auth::user()->name }}</a></li>
-						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-					@endif
-				</ul>
-			</div>
---}}
+
 	    </div><!-- /.container-fluid -->
 	</nav>
 
@@ -67,18 +59,24 @@
 
 	<hr/>
 
-	<div class="container">
+	<div class="container-fluid">
 	    &copy; {{ date('Y') }}</a>
 	    <br/>
 	</div>
 
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		    $('[data-toggle="tooltip"]').tooltip();
-		});
-	</script>
+        <!-- JavaScripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0-beta2/Chart.min.js"></script>        
+        <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
+        {{--{!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!} --}}
+
+        @yield('before-scripts-end')
+        {{-- {!! Html::script(elixir('js/frontend.js')) !!} --}}
+        @yield('after-scripts-end')
+
+        {{-- @include('includes.partials.ga') --}}
 </body>
 </html>
