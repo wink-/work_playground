@@ -50,7 +50,7 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	        <ul class="nav navbar-nav">
-	            <li class="active"><a class="navbar-brand" href="http://pluto/solutions">Solutions</a></li>
+	            <li><a class="navbar-brand" href="http://pluto/solutions">Solutions</a></li>
 	            <li><a class="navbar-brand" href="http://pluto/ovens">Ovens</a></li>
 	            <li><a class="navbar-brand" href="http://pluto/amps">Amps</a></li>
 	         </ul>
