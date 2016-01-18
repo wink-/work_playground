@@ -49,6 +49,7 @@
 @section('before-scripts-end')
 
 	<script>
+
 	var grieve = document.getElementById("grieve").getContext("2d");
 	var LineChartDemo = new Chart(grieve, {
 		type: 'line',
@@ -56,11 +57,13 @@
 				labels: {!! json_encode($dates_grieve) !!},
 				datasets: [{
 					label: 'Temperature of Grieve',
-					data: {!! json_encode($temperatures_grieve) !!},
-					pointBorderWidth: 0
+					pointBorderWidth: 1,
+					data: {!! json_encode($temperatures_grieve) !!}
+
 				}]
 			},
 			options:{
+
 				scales:{
 					yAxes:[{
 						type: "linear",
