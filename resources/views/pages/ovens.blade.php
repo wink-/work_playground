@@ -64,6 +64,10 @@
 				scales:{
 					yAxes:[{
 						type: "linear",
+						scaleLabel:{
+							display:true,
+							labelString: "Degrees Fahrenheit"
+						},
 						ticks:{
 							beginAtZero:true,
 							suggestedMax: 600
@@ -94,6 +98,10 @@
 				scales:{
 					yAxes:[{
 						type: "linear",
+						scaleLabel:{
+							display:true,
+							labelString: "Degrees Fahrenheit"
+						},						
 						ticks:{
 							beginAtZero:true,
 							suggestedMax: 600
@@ -123,6 +131,10 @@
 				scales:{
 					yAxes:[{
 						type: "linear",
+						scaleLabel:{
+							display:true,
+							labelString: "Degrees Fahrenheit"
+						},						
 						ticks:{
 							beginAtZero:true,
 							suggestedMax: 600

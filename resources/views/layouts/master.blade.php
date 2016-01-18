@@ -47,7 +47,8 @@
 	                <span class="icon-bar"></span>
 	            </button>
 	            <a class="navbar-brand" href="http://pluto">Pluto</a>
-	            <a class="navbar-brand" href="http://test.gon/pages/solutions">Tank Status</a>
+	            <a class="navbar-brand" href="http://test.gon/solutions">Solutions</a>
+	            <a class="navbar-brand" href="http://test.gon/ovens">Ovens</a>	            
 	        </div>
 
 	    </div><!-- /.container-fluid -->
