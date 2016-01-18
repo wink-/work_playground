@@ -77,6 +77,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0-beta2/Chart.min.js"></script>        
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
+		<script>
+			$(".nav a").on("click", function(){
+			   $(".nav").find(".active").removeClass("active");
+			   $(this).parent().addClass("active");
+			});
+		</script>        
         {{--{!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!} --}}
 
         @yield('before-scripts-end')
