@@ -49,7 +49,7 @@
 						},
 						ticks:{
 							beginAtZero:true,
-							suggestedMax: 2000
+							suggestedMax: 1000
 						}
 					}],
 					xAxes:[{
@@ -86,7 +86,7 @@
 						},
 						ticks:{
 							beginAtZero:true,
-							suggestedMax: 2000
+							suggestedMax: 1000
 						}
 					}],
 					xAxes:[{
