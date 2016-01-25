@@ -18,6 +18,14 @@
     <canvas id ="barrel2"></canvas>
 </div>
 
+<div class="container-fluid canvas-holder" style="width:900px; height: 400px; background: ;">
+    <canvas id ="rack5"></canvas>
+</div>
+
+<div class="container-fluid canvas-holder" style="width:900px; height: 400px; background: ;">
+    <canvas id ="rack6"></canvas>
+</div>
+
 @endsection
 
 
@@ -171,5 +179,79 @@
 			}
 	});	
 	</script>
+
+	<script>
+
+	var rack5 = document.getElementById("rack5").getContext("2d");
+	var LineChartDemo = new Chart(rack5, {
+		type: 'line',
+			data: {
+				labels: {!! json_encode($rack5_dates) !!},
+				datasets: [{
+					label: 'Rack Zinc 5 Amps for the Past 24 Hours',
+					pointBorderWidth: 1,
+					data: {!! json_encode($rack5_amps) !!}
+
+				}]
+			},
+			options:{
+
+				scales:{
+					yAxes:[{
+						type: "linear",
+						scaleLabel:{
+							display:true,
+							labelString: "Amps"
+						},
+						ticks:{
+							beginAtZero:true,
+							suggestedMax: 500
+						}
+					}],
+					xAxes:[{
+						type: "time"
+
+					}],				
+				}
+			}
+	});	
+	</script>
+
+	<script>
+
+	var rack5 = document.getElementById("rack6").getContext("2d");
+	var LineChartDemo = new Chart(rack6, {
+		type: 'line',
+			data: {
+				labels: {!! json_encode($rack6_dates) !!},
+				datasets: [{
+					label: 'Rack Zinc 6 Amps for the Past 24 Hours',
+					pointBorderWidth: 1,
+					data: {!! json_encode($rack6_amps) !!}
+
+				}]
+			},
+			options:{
+
+				scales:{
+					yAxes:[{
+						type: "linear",
+						scaleLabel:{
+							display:true,
+							labelString: "Amps"
+						},
+						ticks:{
+							beginAtZero:true,
+							suggestedMax: 500
+						}
+					}],
+					xAxes:[{
+						type: "time"
+
+					}],				
+				}
+			}
+	});	
+	</script>	
 
 @endsection

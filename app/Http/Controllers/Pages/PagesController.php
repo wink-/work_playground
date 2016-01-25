@@ -20,11 +20,37 @@ class PagesController extends Controller
     {
         
 
-        $hard_anodize = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '5')->take(1440);
-        $anodize = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '7')->take(1440);
-        $barrel1 = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '17')->take(1440);
-        $barrel2 = Amperage::orderBy('created_at', 'desc')->where('record_id', '=', '19')->take(1440);
+        $hard_anodize = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '5')
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);
+        $anodize = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '7')        
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);
+        $barrel1 = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '17')
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);
+        $barrel2 = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '19')
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);
 
+        $rack5 = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '21')
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);
+        $rack6 = Amperage::orderBy('created_at', 'desc')
+            ->where('record_id', '=', '22')
+            ->where('amp', '<', '2500')
+            ->where('amp', '>', '-1')
+            ->take(1440);            
 
 
         return view('pages.amps')
@@ -37,18 +63,26 @@ class PagesController extends Controller
                 'barrel1_amps' => $barrel1->lists('amp'),
                 'barrel2_dates' => $barrel2->lists('created_at'),
                 'barrel2_amps' => $barrel2->lists('amp'),
+                'rack5_dates' => $rack5->lists('created_at'),
+                'rack5_amps' => $rack5->lists('amp'),
+                'rack6_dates' => $rack6->lists('created_at'),
+                'rack6_amps' => $rack6->lists('amp'),
                 ]);
     }
 
     public function ovens()
     {
         
-        $grieve = Temperature::orderBy('id', 'desc')->where('record_id', '=', '1')->first();
-        $quincy = Temperature::orderBy('id', 'desc')->where('record_id', '=', '2')->first();
-        $lindberg = Temperature::orderBy('id', 'desc')->where('record_id', '=', '3')->first();
-        $grieve_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '=', '1')->take(1440);
-        $quincy_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '=', '2')->take(1440);
-        $lindberg_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '=', '3')->take(1440);                
+        //$grieve = Temperature::orderBy('created_at', 'desc')->where('record_id', '1')->first();
+        $grieve = Temperature::latestTemperature('1');
+        $quincy = Temperature::latestTemperature('2');
+        $lindberg = Temperature::latestTemperature('3');
+
+       
+
+        $grieve_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '1')->take(1440);
+        $quincy_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '2')->take(1440);
+        $lindberg_all = Temperature::orderBy('created_at', 'desc')->where('record_id', '3')->take(1440);
 
 
         return view('pages.ovens', compact('grieve', 'quincy', 'lindberg'))
