@@ -30,6 +30,6 @@ class Amperage extends Model
      * Convert dates into Carbon objects
      *
      * @var array
-     */    
-    protected $dates = ['created_at', 'updated_at'];    
+     */
+    protected $dates = ['created_at', 'updated_at'];
 }

@@ -25,10 +25,9 @@ Route::get('/', 'Pages\PagesController@solutions');
 */
 
 Route::group(['middleware' => ['web']], function () {
-	Route::resource('posts', 'PostsController');
-	Route::get('solutions', 'Pages\PagesController@solutions');
-	Route::get('analysis', 'Pages\PagesController@solutions');
-	Route::get('ovens', 'Pages\PagesController@ovens');
-	Route::get('amps', 'Pages\PagesController@amps');	
+    Route::resource('posts', 'PostsController');
+    Route::get('solutions', 'Pages\PagesController@solutions');
+    Route::get('analysis', 'Pages\PagesController@solutions');
+    Route::get('ovens', 'Pages\PagesController@ovens');
+    Route::get('amps', 'Pages\PagesController@amps');
 });
-
