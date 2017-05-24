@@ -207,7 +207,7 @@ class AnalysisController extends Controller
         ->orderBy('Date', 'desc')->first();
 
         // l_ denotes low limit, h_ denotes high limit
-        $limits = array(
+        $limits = [
             "l_en_metal" => 0.5, "h_en_metal" => 0.85, "l_en_pH" => 4.2, "h_en_pH" => 5.4,
             "l_zinc_metal" => 0.5, "h_zinc_metal" => 2.0, "l_zinc_caustic" => 8.0, "h_zinc_caustic" => 20.0,
             "l_hard_anodize_free_acid" => 12.5, "h_hard_anodize_free_acid" => 15.0, "l_hard_anodize_total_aluminum" => 1.0, "h_hard_anodize_total_aluminum" => 2.5,
@@ -224,7 +224,7 @@ class AnalysisController extends Controller
             "l_chem_yl_pH" => 1.1, "h_chem_yl_pH" => 2.0, "l_chem_yl_concentration" => 0.75, "h_chem_yl_concentration" => 2.25,
             "l_chem_tri_pH" => 3.6, "h_chem_tri_pH" => 3.95, "l_chem_tri_concentration" => 19.0, "h_chem_tri_concentration" => 28.0,
 
-            );
+            ];
         // Cleaners An Clean1, An Clean 2, BL Clean 1, BL Clean 2, Cr Clean 1, EO soak cleaner,
         // Ni Al Clean, Ni Clean 1, Ni Clean 2, Zinc Clean 1
         return view(
