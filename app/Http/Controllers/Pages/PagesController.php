@@ -52,18 +52,18 @@ class PagesController extends Controller
 
         return view('pages.amps')
             ->with([
-                'hard_anodize_dates' => $hard_anodize->lists('created_at'),
-                'hard_anodize_amps' => $hard_anodize->lists('amp'),
-                'anodize_dates' => $anodize->lists('created_at'),
-                'anodize_amps' => $anodize->lists('amp'),
-                'barrel1_dates' => $barrel1->lists('created_at'),
-                'barrel1_amps' => $barrel1->lists('amp'),
-                'barrel2_dates' => $barrel2->lists('created_at'),
-                'barrel2_amps' => $barrel2->lists('amp'),
-                'rack5_dates' => $rack5->lists('created_at'),
-                'rack5_amps' => $rack5->lists('amp'),
-                'rack6_dates' => $rack6->lists('created_at'),
-                'rack6_amps' => $rack6->lists('amp'),
+                'hard_anodize_dates' => $hard_anodize->pluck('created_at'),
+                'hard_anodize_amps' => $hard_anodize->pluck('amp'),
+                'anodize_dates' => $anodize->pluck('created_at'),
+                'anodize_amps' => $anodize->pluck('amp'),
+                'barrel1_dates' => $barrel1->pluck('created_at'),
+                'barrel1_amps' => $barrel1->pluck('amp'),
+                'barrel2_dates' => $barrel2->pluck('created_at'),
+                'barrel2_amps' => $barrel2->pluck('amp'),
+                'rack5_dates' => $rack5->pluck('created_at'),
+                'rack5_amps' => $rack5->pluck('amp'),
+                'rack6_dates' => $rack6->pluck('created_at'),
+                'rack6_amps' => $rack6->pluck('amp'),
                 ]);
     }
 
@@ -84,12 +84,12 @@ class PagesController extends Controller
 
         return view('pages.ovens', compact('grieve', 'quincy', 'lindberg'))
             ->with([
-                'dates_grieve' => $grieve_all->lists('created_at'),
-                'temperatures_grieve' => $grieve_all->lists('temperature'),
-                'dates_quincy' => $quincy_all->lists('created_at'),
-                'temperatures_quincy' => $quincy_all->lists('temperature'),
-                'dates_lindberg' => $lindberg_all->lists('created_at'),
-                'temperatures_lindberg' => $lindberg_all->lists('temperature'),
+                'dates_grieve' => $grieve_all->pluck('created_at'),
+                'temperatures_grieve' => $grieve_all->pluck('temperature'),
+                'dates_quincy' => $quincy_all->pluck('created_at'),
+                'temperatures_quincy' => $quincy_all->pluck('temperature'),
+                'dates_lindberg' => $lindberg_all->pluck('created_at'),
+                'temperatures_lindberg' => $lindberg_all->pluck('temperature'),
                 ]);
     }
     /**
