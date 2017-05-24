@@ -22,7 +22,7 @@ return [
     |
     | The application name for use within the UI of the application
     */
-    'name' => 'Pluto',    
+    'name' => 'Pluto',
 
     /*
     |--------------------------------------------------------------------------
@@ -214,7 +214,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
-        'Html'      => Collective\Html\HtmlFacade::class,        
+        'Html'      => Collective\Html\HtmlFacade::class,
 
     ],
 

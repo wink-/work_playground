@@ -30,7 +30,7 @@ class Temperature extends Model
      * Convert dates into Carbon objects
      *
      * @var array
-     */    
+     */
     protected $dates = ['created_at', 'updated_at'];
 
 
@@ -41,9 +41,7 @@ class Temperature extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeLatestTemperature($query, $record_id)
-    	{
-    		return $query->orderBy('created_at', 'desc')->where('record_id', $record_id)->first();
-    	}
-
-  	
+    {
+            return $query->orderBy('created_at', 'desc')->where('record_id', $record_id)->first();
+    }
 }

@@ -19,7 +19,7 @@ class Analysis extends Model
      *
      * @var string
      */
-    protected $table = 'Analysis';    
+    protected $table = 'Analysis';
 
    /**
      * The primary key used by the model.
@@ -48,7 +48,6 @@ class Analysis extends Model
      * Convert dates into Carbon objects
      *
      * @var array
-     */    
+     */
     protected $dates = ['created_at', 'updated_at', 'TimeStamp','Date'];
-
 }
